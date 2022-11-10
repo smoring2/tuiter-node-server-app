@@ -9,7 +9,7 @@ export default [
     },
     {
         "_id": 234, "topic": "Traffic", "username": "The Boring Company",
-        "handle": "@boringcompany", "time": "2h", "image": "boring2.jpg",
+        "handle": "@boringcompany", "time": "2h", "image": "boeing.png",
         "title": "100s of SpaceX Starships land on Mars after a 6 month journey. 1000s of Martian colonists being building Mars Base 1",
         "tuit": "The Boring Company (TBC) is an American infrastructure and tunnel construction services company founded by Elon Musk. Its ongoing and proposed projects are designed for intra-city ('loop') transit systems.",
         "liked": true, "likes": 2345, "dislikes":0,
