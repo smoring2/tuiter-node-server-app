@@ -5,7 +5,7 @@
   "description": "Node.js HTTP Web server for the Tuiter application",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js "
+    "start": "node app.js "
   },
   "repository": {
     "type": "git",
