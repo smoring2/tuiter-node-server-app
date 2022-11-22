@@ -8,6 +8,8 @@ const createTuit = async (req, res) => {
     newTuit.likes = 0;
     newTuit.liked = false;
     newTuit.dislikes = 0;
+    newTuit.replies = 0;
+    newTuit.retuits = 0;
     // tuits.push(newTuit);
     const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);
@@ -19,21 +21,22 @@ const findTuits = async (req, res) => {
 }
 
 const updateTuit = async (req, res) => {
-    const tuitdIdToUpdate = parseInt(req.params.tid);
+    const tuitdIdToUpdate = req.params.tid;
     const updates = req.body;
     // const tuitIndex = tuits.findIndex(
     //     (t) => t._id === tuitdIdToUpdate)
     // tuits[tuitIndex] =
     //     {...tuits[tuitIndex], ...updates};
     const status = await tuitsDao.updateTuit(tuitdIdToUpdate, updates);
-    res.sendStatus(status);
+    res.json(status);
 }
 
 const deleteTuit = async (req, res) => {
-    const tuitdIdToDelete = parseInt(req.params.tid);
-    // tuits = tuits.filter(t => t._id !== tuitdIdToDelete);
+    const tuitdIdToDelete = req.params.tid;
     const status = await tuitsDao.deleteTuit(tuitdIdToDelete);
-    res.sendStatus(status);
+    // tuits = tuits.filter(t =>
+    //     t._id !== tuitdIdToDelete);
+    res.json(status);
 }
 
 export default (app) => {
