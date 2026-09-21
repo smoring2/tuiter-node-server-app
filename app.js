@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 
+import { rateLimiter } from "./controllers/rate-limiter.js";
 import HelloController
     from "./controllers/hello-controller.js";
 import UserController
@@ -11,6 +12,7 @@ import TuitsController
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(rateLimiter({ windowMs: 60_000, maxRequests: 100 }));
 HelloController(app);
 UserController(app);
 TuitsController(app);
